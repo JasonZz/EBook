@@ -7,6 +7,7 @@
 //
 
 #import "EBookAppDelegate.h"
+#import "EBookRootViewController.h"
 
 @implementation EBookAppDelegate
 
@@ -21,6 +22,13 @@
     self.window = [[[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]] autorelease];
     // Override point for customization after application launch.
     self.window.backgroundColor = [UIColor whiteColor];
+    
+    EBookRootViewController *_vc = [[EBookRootViewController alloc] initWithNibName:@"EBookRootViewController"
+                                                                             bundle:nil];
+    UINavigationController *_nav = [[UINavigationController alloc] initWithRootViewController:_vc];
+    [_vc release];
+    self.window.rootViewController  = _nav;
+    [_nav release];
     [self.window makeKeyAndVisible];
     return YES;
 }

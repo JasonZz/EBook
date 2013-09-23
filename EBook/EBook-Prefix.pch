@@ -9,6 +9,12 @@
 #endif
 
 #ifdef __OBJC__
+
+    #define EBookRetain(__v) ([__v retain]);
+    #define EBookRelease(__v) ([__v release]);
+    
     #import <UIKit/UIKit.h>
     #import <Foundation/Foundation.h>
+    #import "NSStringAdditions.h"
+    #import "Constants.h"
 #endif
